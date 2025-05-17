@@ -33,3 +33,10 @@ func ReadAndDisplayTextFile(filepath string, w io.Writer, showLineCounts bool) e
 
 	return nil
 }
+func ReadAndDisplayStandardInput() error {
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
+	return scanner.Err()
+}

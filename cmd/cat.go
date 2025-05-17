@@ -22,9 +22,7 @@ func main() {
 	for _, filename := range filenames {
 
 		if filename == "-" {
-			content := ""
-			fmt.Scanln(&content)
-			fmt.Fprintln(os.Stdout, content)
+			pkg.ReadAndDisplayStandardInput()
 			continue
 		}
 
